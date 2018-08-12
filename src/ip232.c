@@ -161,21 +161,9 @@ int ip232_write(modem_config *cfg, char *data, int len)
   retval = len;
   if (cfg->dce_data.ip232_is_connected) {
     while (i < len) {
-      if (double_iac) {
-        text[text_len++] = 255;
-        double_iac = FALSE;
-        i++;
-      }
-      else {
-        if (255 == data[i]) {
-          text[text_len++] = 255;
-          double_iac = TRUE;
-        }
-        else {
           text[text_len++] = data[i++];
-        }
-      }
-      if (text_len == sizeof(text)) {
+
+	  if (text_len == sizeof(text)) {
         retval = ip_write(cfg->dce_data.fd, text, text_len);
         text_len = 0;
       }
