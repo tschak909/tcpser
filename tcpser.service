@@ -1,0 +1,7 @@
+[Unit]
+Description=USB serial to socket bridge
+After=remote-fs.target
+After=syslog.target
+
+[Service]
+ExecStart=/usr/local/bin/tcpser -d /dev/ttyUSB0 -s 2400 -i "&K6"
