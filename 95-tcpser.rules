@@ -1,0 +1,1 @@
+KERNEL=="ttyUSB0", ENV{SYSTEMD_WANTS}="serialdaemon.service"
