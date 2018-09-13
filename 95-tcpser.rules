@@ -1,1 +1,1 @@
-KERNEL=="ttyUSB0", ENV{SYSTEMD_WANTS}="serialdaemon.service"
+KERNEL=="ttyUSB0", ENV{SYSTEMD_WANTS}="tcpser.service"
